@@ -38,7 +38,6 @@ class DashBoardVC: UIViewController, ChartViewDelegate {
             data: overview
           )
         }
-        print(entries)
         let dataSet = PieChartDataSet(entries: entries, label: "코로나 발생 현황")
         dataSet.sliceSpace = 1
         dataSet.entryLabelColor = .black
@@ -49,11 +48,11 @@ class DashBoardVC: UIViewController, ChartViewDelegate {
         dataSet.valueLinePart2Length = 0.3
 
         dataSet.colors = ChartColorTemplates.vordiplom()
-          + ChartColorTemplates.joyful()
-          + ChartColorTemplates.colorful()
-          + ChartColorTemplates.liberty()
-          + ChartColorTemplates.pastel()
-          + ChartColorTemplates.material()
+//          + ChartColorTemplates.joyful()
+//          + ChartColorTemplates.colorful()
+//          + ChartColorTemplates.liberty()
+//          + ChartColorTemplates.pastel()
+//          + ChartColorTemplates.material()
 
         self.chartView.data = PieChartData(dataSet: dataSet)
         self.chartView.spin(duration: 0.3, fromAngle: chartView.rotationAngle, toAngle: chartView.rotationAngle + 80)
@@ -70,11 +69,12 @@ class DashBoardVC: UIViewController, ChartViewDelegate {
     }
     var response: CovidOverView? = nil
 
-
 }
 
 
 extension DashBoardVC{
+    
+    
     func failFetchCovidInfo(){
         
     }
@@ -86,6 +86,7 @@ extension DashBoardVC{
     }
     
     func makeCovidOverviewList() -> [CovidInCity] {
+        var overviewList: [CovidInCity]?
       return [
         response!.seoul,
         response!.busan,
