@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CoronaChartApp
+//  InstagramChallenge
 //
-//  Created by 유준용 on 2022/03/07.
+//  Created by 유준용 on 2022/07/25.
 //
 
 import UIKit
